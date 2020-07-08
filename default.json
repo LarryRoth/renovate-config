@@ -1,0 +1,52 @@
+{
+  "extends": [
+    "config:base"
+  ],
+  "automerge": true,
+  "automergeType": "branch",
+  "major": {
+    "automerge": false
+  },
+  "packageRules": [
+    {
+      "packagePatterns": [ "eslint" ],
+      "groupName": "eslint",
+      "schedule": ["on the first day of the month"],
+      "automerge": true,
+      "automergeType": "branch"
+    },
+    {
+        "packagePatterns": [ "stylelint" ],
+        "groupName": "styleline",
+        "schedule": ["on the first day of the month"],
+        "automerge": true,
+        "automergeType": "branch"
+      },
+      {
+        "packagePatterns": [ "gatsby" ],
+        "groupName": "gatsby",
+        "updateTypes": ["minor"],
+        "automerge": false
+      },
+      {
+        "packagePatterns": [ "react" ],
+        "groupName": "react",
+        "updateTypes": ["minor"],
+        "automerge": false
+      },
+      {
+        "packageNames": ["netlify-cms-app", "nuka-carousel"],
+        "updateTypes": ["minor"],
+        "automerge": false
+    },
+    {
+        "packageNames": ["rebass"],
+        "updateTypes": ["minor"],
+        "automerge": false
+    }],
+  "schedule": [
+    "after 1am every weekday",
+    "before 12pm every weekday",
+    "every weekend"
+  ]
+}
